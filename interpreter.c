@@ -1,8 +1,6 @@
 #include "interpreter.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include <termios.h>
 
 
 #define MAX 10000
@@ -112,8 +110,7 @@ void goBack() {
 
 
 void input() {
-	char c;
-	read(STDIN_FILENO, &c, 1);
+	char c = fgetc(stdin);
 	arr[current] = c;
 }
 
